@@ -1,0 +1,343 @@
+body {
+    background-image: url("https://www.dlbauto.pt/wp-content/uploads/2020/12/fb_preview.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    color: white;
+    font-size: 2rem;
+}
+#text {
+    text-decoration: none;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.header {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00BFFF;
+}
+
+.content {
+    margin-top: 0; /* Removed margin-top to ensure the content starts from the top */
+    padding: 20px;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Aligns content at the top */
+    padding: 0;
+    position: relative;
+}
+
+.home-content {
+    max-width: 600px;
+    text-align: center; /* Centers the text within the container */
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #607D8B;
+    text-decoration: underline;
+    margin-left: -20px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 6rem;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.me {
+    color: #00abf0;
+}
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid #00abf0;
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid rgba(0, 0, 0, 0.7);
+    border-bottom: .2rem solid rgba(0, 0, 0, 0.7);
+    border-left: .2rem solid #00abf0;
+    border-right: .2rem solid #00abf0;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.about-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.about-content p {
+    margin: 1rem 0;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.btn-box.btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.auto-service {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.auto-title {
+    text-align: center;
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.auto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.auto-item {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    width: 450px;
+}
+
+.auto-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f39c12;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.auto-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.auto-item img:hover {
+    transform: scale(1.05);
+}
+
+.contact-info {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.modal.show {
+    display: flex; /* Show the modal */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.modal-description {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Ensure the content stays centered */
+.auto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.auto-item {
+    text-align: center;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.auto-item img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.auto-item img:hover {
+    transform: scale(1.1);
+}
+
+.contact {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px 10%;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-info div {
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+ 
